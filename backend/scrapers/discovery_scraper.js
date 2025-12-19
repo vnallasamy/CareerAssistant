@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 const DB_PATH = path.join(__dirname, '..', 'jobs.db');
 const SITES_FILE = path.join(__dirname, '..', 'config', 'job_sites.txt');
 const OLLAMA_URL = 'http://localhost:11434/api/generate';
-const LOCATIONIQ_KEY = 'pk.bfc262eefb0672ba1f6daf84bbf3b08b';
+const LOCATIONIQ_KEY = 'YOUR_LOCATIONIQ_API_KEY_HERE';
 const LOCATIONIQ_URL = 'https://us1.locationiq.com/v1/search';
 const MODEL = 'llama3.2';
 
