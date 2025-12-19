@@ -1,0 +1,331 @@
+import { chromium } from 'playwright';
+import fs from 'fs';
+import path from 'path';
+import Database from 'better-sqlite3';
+import crypto from 'crypto';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const db = new Database(path.join(__dirname, '../jobs.db'));
+const LOG_FILE = path.join(__dirname, 'scraper.log');
+const SNOOZE_BETWEEN_SITES = 10000;
+const SNOOZE_BETWEEN_JOBS = 1000;
+const SITES_FILE = path.join(__dirname, '../config/job_sites.txt');
+const CONFIG_FILE = path.join(__dirname, '../config/scraper_config.json');
+
+let isRunning = true;
+let isPaused = false;
+let currentRoles = ['program manager'];
+
+function log(message) {
+    const timestamp = new Date().toLocaleTimeString();
+    const logLine = `[${timestamp}] ${message}`;
+    console.log(logLine);
+    fs.appendFileSync(LOG_FILE, logLine + '\n');
+}
+
+function loadConfig() {
+    try {
+        if (fs.existsSync(CONFIG_FILE)) {
+            const config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf-8'));
+            currentRoles = config.roles || ['program manager'];
+        }
+    } catch (err) {
+        log('Config error: ' + err.message);
+    }
+}
+
+function loadJobSites() {
+    try {
+        const content = fs.readFileSync(SITES_FILE, 'utf-8');
+        return content.split('\n')
+            .map(line => line.trim())
+            .filter(line => line && !line.startsWith('#'));
+    } catch (err) {
+        log('Sites load error: ' + err.message);
+        return [];
+    }
+}
+
+function getSiteType(url) {
+    if (url.includes('oraclecloud.com') || url.includes('fa.ocs')) return 'oracle';
+    if (url.includes('myworkdayjobs.com') || url.includes('myworkdaysite.com')) return 'workday';
+    if (url.includes('eightfold.ai')) return 'eightfold';
+    if (url.includes('icims.com')) return 'icims';
+    if (url.includes('ultipro') || url.includes('ukg.net')) return 'ultipro';
+    if (url.includes('avature.net')) return 'avature';
+    return 'generic';
+}
+
+async function handlePagination(page, siteType) {
+    log('   ⏳ Loading more results...');
+    
+    if (siteType === 'oracle' || siteType === 'workday') {
+        let previousHeight = 0;
+        for (let i = 0; i < 15; i++) {
+            await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+            await page.waitForTimeout(2000);
+            
+            const currentHeight = await page.evaluate(() => document.body.scrollHeight);
+            if (currentHeight === previousHeight) break;
+            previousHeight = currentHeight;
+        }
+    } else {
+        for (let i = 0; i < 8; i++) {
+            await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+            await page.waitForTimeout(1500);
+        }
+    }
+    
+    const loadMoreSelectors = [
+        'button:has-text("Load More")', 
+        'button:has-text("Show More")',
+        'button:has-text("See More")',
+        '[class*="load-more"]',
+        '[data-uxi-widget-type*="loadMore"]'
+    ];
+    
+    for (let i = 0; i < 8; i++) {
+        let clicked = false;
+        for (const selector of loadMoreSelectors) {
+            try {
+                const button = page.locator(selector).first();
+                if (await button.isVisible({ timeout: 1000 })) {
+                    await button.click();
+                    log(`   ✓ Clicked "Load More" (${i + 1})`);
+                    await page.waitForTimeout(3000);
+                    clicked = true;
+                    break;
+                }
+            } catch (e) {}
+        }
+        if (!clicked) break;
+    }
+}
+
+async function extractJobsOracle(page) {
+    return await page.evaluate(() => {
+        const jobs = new Map();
+        const selectors = [
+            'a[href*="/job/"]',
+            'a[href*="requisitionId"]',
+            'span[class*="Title"] a',
+            '[data-test-id*="job"] a'
+        ];
+        
+        selectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach(link => {
+                const href = link.href;
+                const text = link.textContent?.trim() || '';
+                
+                if (href && 
+                    (href.includes('/job/') || href.includes('requisitionId')) &&
+                    text.length > 15 &&
+                    text.length < 150 &&
+                    !text.match(/equal|scam|career|privacy|term|cookie/i)) {
+                    
+                    jobs.set(href.split('?')[0], {
+                        title: text,
+                        url: href.split('?')[0],
+                        company: window.location.hostname.split('.')[0]
+                    });
+                }
+            });
+        });
+        
+        return Array.from(jobs.values());
+    });
+}
+
+async function extractJobsWorkday(page) {
+    return await page.evaluate(() => {
+        const jobs = new Map();
+        const containers = document.querySelectorAll('[data-automation-id*="job"], li[class*="css"]');
+        
+        containers.forEach(container => {
+            const link = container.querySelector('a');
+            const titleEl = container.querySelector('[data-automation-id*="jobTitle"], h3, [class*="title"]');
+            
+            if (link && titleEl) {
+                const href = link.href;
+                const text = titleEl.textContent?.trim() || '';
+                
+                if (href && text.length > 10 && text.length < 150) {
+                    jobs.set(href.split('?')[0], {
+                        title: text,
+                        url: href.split('?')[0],
+                        company: window.location.hostname.split('.')[0]
+                    });
+                }
+            }
+        });
+        
+        return Array.from(jobs.values());
+    });
+}
+
+async function extractJobsGeneric(page) {
+    return await page.evaluate(() => {
+        const jobs = new Map();
+        const selectors = [
+            'a[href*="/job"]',
+            'a[href*="jobId"]',
+            'a[href*="job_id"]',
+            'a[href*="requisition"]',
+            '[class*="job-title"] a',
+            '[class*="job-card"] a',
+            '[data-job] a'
+        ];
+        
+        const excludeWords = /^(home|search|filter|sign|log|register|privacy|terms|cookie|help|faq|about|career|explore|join|saved|apply|create|equal|diversity|location)$/i;
+        
+        selectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach(link => {
+                const href = link.href;
+                const text = link.textContent?.trim() || '';
+                
+                if (href && 
+                    text.length > 15 && 
+                    text.length < 150 &&
+                    !excludeWords.test(text) &&
+                    href.match(/job|career|position|requisition/i)) {
+                    
+                    const cleanUrl = href.split('?')[0].split('#')[0];
+                    jobs.set(cleanUrl, {
+                        title: text,
+                        url: cleanUrl,
+                        company: window.location.hostname.replace('www.', '').split('.')[0]
+                    });
+                }
+            });
+        });
+        
+        return Array.from(jobs.values());
+    });
+}
+
+async function scrapeSite(page, siteUrl, role) {
+    const fullUrl = siteUrl.endsWith('=') ? siteUrl + encodeURIComponent(role) : siteUrl + role;
+    log(`🔍 ${fullUrl}`);
+    
+    const siteType = getSiteType(fullUrl);
+    log(`   📍 Site type: ${siteType}`);
+    
+    try {
+        await page.goto(fullUrl, { waitUntil: 'networkidle', timeout: 60000 });
+        await page.waitForTimeout(5000);
+        
+        await handlePagination(page, siteType);
+        
+        let jobs = [];
+        if (siteType === 'oracle') {
+            jobs = await extractJobsOracle(page);
+        } else if (siteType === 'workday') {
+            jobs = await extractJobsWorkday(page);
+        } else {
+            jobs = await extractJobsGeneric(page);
+        }
+        
+        log(`   ✅ Extracted ${jobs.length} job links`);
+        
+        if (jobs.length > 0) {
+            log(`   📋 Sample jobs:`);
+            jobs.slice(0, 3).forEach(j => log(`     • ${j.title.substring(0, 50)}`));
+        }
+        
+        return jobs;
+        
+    } catch (err) {
+        log(`   ❌ ${err.message}`);
+        return [];
+    }
+}
+
+async function processJobBatch(jobs, siteName) {
+    let addedCount = 0;
+    let duplicateCount = 0;
+    
+    for (const job of jobs) {
+        const existing = db.prepare('SELECT id FROM jobs WHERE url = ?').get(job.url);
+        
+        if (existing) {
+            duplicateCount++;
+            continue;
+        }
+        
+        const id = crypto.randomUUID();
+        db.prepare(`
+            INSERT INTO jobs (id, title, company, url, source, status)
+            VALUES (?, ?, ?, ?, ?, 'new')
+        `).run(id, job.title, job.company, job.url, siteName);
+        
+        addedCount++;
+        
+        if (addedCount <= 5) {
+            log(`   ✅ ${job.title}`);
+        }
+        
+        await new Promise(resolve => setTimeout(resolve, SNOOZE_BETWEEN_JOBS));
+    }
+    
+    if (addedCount > 5) {
+        log(`   ... and ${addedCount - 5} more`);
+    }
+    
+    return { addedCount, duplicateCount };
+}
+
+async function mainLoop() {
+    fs.writeFileSync(LOG_FILE, '');
+    log(`🚀 Job Scraper Started with Site-Specific Logic`);
+    
+    const browser = await chromium.launch({ 
+        headless: true,
+        args: ['--disable-blink-features=AutomationControlled']
+    });
+    
+    const context = await browser.newContext({
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+    });
+    
+    while (isRunning) {
+        if (isPaused) {
+            await new Promise(resolve => setTimeout(resolve, 5000));
+            continue;
+        }
+        
+        loadConfig();
+        const sites = loadJobSites();
+        
+        log(`\n📋 Roles: ${currentRoles.join(', ')}`);
+        log(`🌐 Sites: ${sites.length}\n`);
+        
+        for (const role of currentRoles) {
+            log(`${'='.repeat(60)}`);
+            log(`🎯 "${role}"`);
+            log(`${'='.repeat(60)}\n`);
+            
+            for (const siteUrl of sites) {
+                const siteName = new URL(siteUrl).hostname.replace('www.', '');
+                log(`\n📌 ${siteName}`);
+                
+                const page = await context.newPage();
+                const jobs = await scrapeSite(page, siteUrl, role);
+                const result = await processJobBatch(jobs, siteName);
+                await page.close();
+                
+                log(`   📊 Added: ${result.addedCount} | Skipped: ${result.duplicateCount}\n`);
+                log(`😴 ${SNOOZE_BETWEEN_SITES/1000}s pause\n`);
+                
+                await new Promise(resolve => setTimeout(resolve, SNOOZE_BETWEEN_SITES));
+            }
+        }
+        
+        log(`✅ Full cycle complete - waiting 5min\n\n`);
+        await new Promise(resolve => setTimeout(resolve, 300000));
+    }
+    
+    await browser.close();
+}
+
+mainLoop().catch(err => log('FATAL: ' + err));

@@ -1,0 +1,30 @@
+/* Resume Manager Modal - Clean Fixed Layout */
+.resume-manager-content {
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    width: 95%;
+    max-width: 1400px;
+}
+
+.resume-manager-header {
+    flex: 0 0 auto;
+    background: #E67548;
+    padding: 20px 30px;
+}
+
+.resume-manager-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    display: flex;
+}
+
+.resume-manager-footer {
+    flex: 0 0 auto;
+    display: flex;
+    padding: 20px 30px;
+    background: #fafafa;
+    border-top: 1px solid #e8e8ed;
+    gap: 10px;
+    justify-content: flex-end;
+}

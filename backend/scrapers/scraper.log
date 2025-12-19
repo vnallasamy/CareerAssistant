@@ -1,0 +1,373 @@
+[5:02:02 p.m.] 🚀 Job Scraper Started with Site-Specific Logic
+[5:02:02 p.m.] 
+📋 Roles: business analyst
+[5:02:02 p.m.] 🌐 Sites: 26
+
+[5:02:02 p.m.] ============================================================
+[5:02:02 p.m.] 🎯 "business analyst"
+[5:02:02 p.m.] ============================================================
+
+[5:02:02 p.m.] 
+📌 associatedbank.wd1.myworkdayjobs.com
+[5:02:02 p.m.] 🔍 https://associatedbank.wd1.myworkdayjobs.com/en-US/externalcareers?keywords=business+analyst
+[5:02:02 p.m.]    📍 Site type: workday
+[5:02:10 p.m.]    ⏳ Loading more results...
+[5:02:14 p.m.]    ✅ Extracted 0 job links
+[5:02:14 p.m.]    📊 Added: 0 | Skipped: 0
+
+[5:02:14 p.m.] 😴 10s pause
+
+[5:02:24 p.m.] 
+📌 barclays.wd3.myworkdayjobs.com
+[5:02:24 p.m.] 🔍 https://barclays.wd3.myworkdayjobs.com/en-US/External_Career_Site_Barclays?keywords=business+analyst
+[5:02:24 p.m.]    📍 Site type: workday
+[5:02:33 p.m.]    ⏳ Loading more results...
+[5:02:37 p.m.]    ✅ Extracted 20 job links
+[5:02:37 p.m.]    📋 Sample jobs:
+[5:02:37 p.m.]      • Controls Assurance - VP
+[5:02:37 p.m.]      • Americas Financial Crime Transformation Lead - VP
+[5:02:37 p.m.]      • Trade Specialist
+[5:02:37 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:02:37 p.m.] 😴 10s pause
+
+[5:02:47 p.m.] 
+📌 bbva.wd3.myworkdayjobs.com
+[5:02:47 p.m.] 🔍 https://bbva.wd3.myworkdayjobs.com/BBVA?keywords=business+analyst
+[5:02:47 p.m.]    📍 Site type: workday
+[5:02:55 p.m.]    ⏳ Loading more results...
+[5:03:00 p.m.]    ✅ Extracted 21 job links
+[5:03:00 p.m.]    📋 Sample jobs:
+[5:03:00 p.m.]      • RSG + Quants + Data Senior  Manager (Cuauhtémoc, C
+[5:03:00 p.m.]      • Banquero/a Patrimonial (Veracruz)
+[5:03:00 p.m.]      • Ejecutivo/a Empresarial Banca de Empresas  (Noroes
+[5:03:00 p.m.]    📊 Added: 0 | Skipped: 21
+
+[5:03:00 p.m.] 😴 10s pause
+
+[5:03:10 p.m.] 
+📌 bmo.wd3.myworkdayjobs.com
+[5:03:10 p.m.] 🔍 https://bmo.wd3.myworkdayjobs.com/en-US/External?keywords=business+analyst
+[5:03:10 p.m.]    📍 Site type: workday
+[5:03:18 p.m.]    ⏳ Loading more results...
+[5:03:22 p.m.]    ✅ Extracted 20 job links
+[5:03:22 p.m.]    📋 Sample jobs:
+[5:03:22 p.m.]      • Senior Business Development Manager
+[5:03:22 p.m.]      • Marketing Manager, Segments
+[5:03:22 p.m.]      • Strategic Manager, Marketing
+[5:03:22 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:03:22 p.m.] 😴 10s pause
+
+[5:03:32 p.m.] 
+📌 cibc.wd3.myworkdayjobs.com
+[5:03:32 p.m.] 🔍 https://cibc.wd3.myworkdayjobs.com/search?keywords=business+analyst
+[5:03:32 p.m.]    📍 Site type: workday
+[5:03:41 p.m.]    ⏳ Loading more results...
+[5:03:45 p.m.]    ✅ Extracted 20 job links
+[5:03:45 p.m.]    📋 Sample jobs:
+[5:03:45 p.m.]      • Financial Services Associate
+[5:03:45 p.m.]      • Senior Consultant, Business Controls
+[5:03:45 p.m.]      • Mobile Mortgage Advisor (Commission Only) - Grande
+[5:03:45 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:03:45 p.m.] 😴 10s pause
+
+[5:03:55 p.m.] 
+📌 db.wd3.myworkdayjobs.com
+[5:03:55 p.m.] 🔍 https://db.wd3.myworkdayjobs.com/en-US/DBWebsite?keywords=business+analyst
+[5:03:55 p.m.]    📍 Site type: workday
+[5:04:03 p.m.]    ⏳ Loading more results...
+[5:04:07 p.m.]    ✅ Extracted 20 job links
+[5:04:07 p.m.]    📋 Sample jobs:
+[5:04:07 p.m.]      • Private Bank - Relationship Manager, KSA
+[5:04:07 p.m.]      • ABS Due Diligence Associate
+[5:04:07 p.m.]      • Senior Relationship Manager, Greece
+[5:04:07 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:04:07 p.m.] 😴 10s pause
+
+[5:04:17 p.m.] 
+📌 fifththird.wd5.myworkdayjobs.com
+[5:04:17 p.m.] 🔍 https://fifththird.wd5.myworkdayjobs.com/53careers?keywords=business+analyst
+[5:04:17 p.m.]    📍 Site type: workday
+[5:04:26 p.m.]    ⏳ Loading more results...
+[5:04:30 p.m.]    ✅ Extracted 20 job links
+[5:04:30 p.m.]    📋 Sample jobs:
+[5:04:30 p.m.]      • Retail Personal Banker l - Cincinnati (Hamilton Co
+[5:04:30 p.m.]      • Corporate Banking Director - FIG
+[5:04:30 p.m.]      • Annuity Processing Specialist
+[5:04:30 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:04:30 p.m.] 😴 10s pause
+
+[5:04:40 p.m.] 
+📌 fnbcorp.wd501.myworkdayjobs.com
+[5:04:40 p.m.] 🔍 https://fnbcorp.wd501.myworkdayjobs.com/FNBCORP?keywords=business+analyst
+[5:04:40 p.m.]    📍 Site type: workday
+[5:04:48 p.m.]    ⏳ Loading more results...
+[5:04:52 p.m.]    ✅ Extracted 20 job links
+[5:04:52 p.m.]    📋 Sample jobs:
+[5:04:52 p.m.]      • Associate Financial Advisor
+[5:04:52 p.m.]      • Senior Relationship Banker
+[5:04:52 p.m.]      • Commercial Bank Leasing Specialist - Raleigh, NC
+[5:04:52 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:04:52 p.m.] 😴 10s pause
+
+[5:05:02 p.m.] 
+📌 ghr.wd1.myworkdayjobs.com
+[5:05:02 p.m.] 🔍 https://ghr.wd1.myworkdayjobs.com/en-US/Lateral-US?keywords=business+analyst
+[5:05:02 p.m.]    📍 Site type: workday
+[5:05:10 p.m.]    ⏳ Loading more results...
+[5:05:14 p.m.]    ✅ Extracted 20 job links
+[5:05:14 p.m.]    📋 Sample jobs:
+[5:05:14 p.m.]      • Wealth Management Banking Specialist
+[5:05:14 p.m.]      • Market Leader - Advisor Development Program
+[5:05:14 p.m.]      • Market Leader - Advisor Development Program
+[5:05:14 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:05:14 p.m.] 😴 10s pause
+
+[5:05:24 p.m.] 
+📌 jll.wd1.myworkdayjobs.com
+[5:05:24 p.m.] 🔍 https://jll.wd1.myworkdayjobs.com/lasallecareers?keywords=business+analyst
+[5:05:24 p.m.]    📍 Site type: workday
+[5:05:32 p.m.]    ⏳ Loading more results...
+[5:05:36 p.m.]    ✅ Extracted 5 job links
+[5:05:36 p.m.]    📋 Sample jobs:
+[5:05:36 p.m.]      • Analyst, Internal Sales Associate
+[5:05:36 p.m.]      • Vice President, Investor Relations
+[5:05:36 p.m.]      • Executive Assistant
+[5:05:36 p.m.]    📊 Added: 0 | Skipped: 5
+
+[5:05:36 p.m.] 😴 10s pause
+
+[5:05:46 p.m.] 
+📌 ms.wd5.myworkdayjobs.com
+[5:05:46 p.m.] 🔍 https://ms.wd5.myworkdayjobs.com/en-US/External?keywords=business+analyst
+[5:05:46 p.m.]    📍 Site type: workday
+[5:05:54 p.m.]    ⏳ Loading more results...
+[5:05:58 p.m.]    ✅ Extracted 19 job links
+[5:05:58 p.m.]    📋 Sample jobs:
+[5:05:58 p.m.]      • Wealth Management Analyst
+[5:05:58 p.m.]      • Associate Service Manager
+[5:05:58 p.m.]      • Client Service Associate
+[5:05:58 p.m.]    📊 Added: 0 | Skipped: 19
+
+[5:05:58 p.m.] 😴 10s pause
+
+[5:06:08 p.m.] 
+📌 mtb.wd5.myworkdayjobs.com
+[5:06:08 p.m.] 🔍 https://mtb.wd5.myworkdayjobs.com/MTB?keywords=business+analyst
+[5:06:08 p.m.]    📍 Site type: workday
+[5:06:17 p.m.]    ⏳ Loading more results...
+[5:06:21 p.m.]    ✅ Extracted 19 job links
+[5:06:21 p.m.]    📋 Sample jobs:
+[5:06:21 p.m.]      • Senior Administrative Assistant
+[5:06:21 p.m.]      • Senior Strategic Initiatives Analyst - Executive R
+[5:06:21 p.m.]      • Universal Banker
+[5:06:21 p.m.]    📊 Added: 0 | Skipped: 19
+
+[5:06:21 p.m.] 😴 10s pause
+
+[5:06:31 p.m.] 
+📌 mufgub.wd3.myworkdayjobs.com
+[5:06:31 p.m.] 🔍 https://mufgub.wd3.myworkdayjobs.com/MUFG-Careers?keywords=business+analyst
+[5:06:31 p.m.]    📍 Site type: workday
+[5:06:40 p.m.]    ⏳ Loading more results...
+[5:06:44 p.m.]    ✅ Extracted 20 job links
+[5:06:44 p.m.]    📋 Sample jobs:
+[5:06:44 p.m.]      • Assistant Vice President, Settlements
+[5:06:44 p.m.]      • Marketing Officer/RM Support (Analyst) for JCB
+[5:06:44 p.m.]      • AVP-Markets Compliance Officer
+[5:06:44 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:06:44 p.m.] 😴 10s pause
+
+[5:06:54 p.m.] 
+📌 ntrs.wd1.myworkdayjobs.com
+[5:06:54 p.m.] 🔍 https://ntrs.wd1.myworkdayjobs.com/northerntrust?keywords=business+analyst
+[5:06:54 p.m.]    📍 Site type: workday
+[5:07:01 p.m.]    ⏳ Loading more results...
+[5:07:05 p.m.]    ✅ Extracted 20 job links
+[5:07:05 p.m.]    📋 Sample jobs:
+[5:07:05 p.m.]      • Artificial Intelligence Data Integration Specialis
+[5:07:05 p.m.]      • Principal, Cyber Sec Eng
+[5:07:05 p.m.]      • Assoc Specialist, Fund Admin, HFS
+[5:07:05 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:07:05 p.m.] 😴 10s pause
+
+[5:07:15 p.m.] 
+📌 pnc.wd5.myworkdayjobs.com
+[5:07:16 p.m.] 🔍 https://pnc.wd5.myworkdayjobs.com/en-US/External?keywords=business+analyst
+[5:07:16 p.m.]    📍 Site type: workday
+[5:07:24 p.m.]    ⏳ Loading more results...
+[5:07:28 p.m.]    ✅ Extracted 20 job links
+[5:07:28 p.m.]    📋 Sample jobs:
+[5:07:28 p.m.]      • Financial Advisor - PNC Wealth Management
+[5:07:28 p.m.]      • Financial Advisor - PNC Wealth Management
+[5:07:28 p.m.]      • Learning & Talent Development Specialist - Retail 
+[5:07:28 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:07:28 p.m.] 😴 10s pause
+
+[5:07:38 p.m.] 
+📌 raymondjames.wd1.myworkdayjobs.com
+[5:07:38 p.m.] 🔍 https://raymondjames.wd1.myworkdayjobs.com/en-US/RaymondJamesCareers?keywords=business+analyst
+[5:07:38 p.m.]    📍 Site type: workday
+[5:07:46 p.m.]    ⏳ Loading more results...
+[5:07:50 p.m.]    ✅ Extracted 21 job links
+[5:07:50 p.m.]    📋 Sample jobs:
+[5:07:50 p.m.]      • Manager, PCB Education & Engagement - RJ Bank
+[5:07:50 p.m.]      • Eastern Advisor Recruiting Director
+[5:07:50 p.m.]      • Client Service Associate (Tuscaloosa, AL)
+[5:07:50 p.m.]    📊 Added: 0 | Skipped: 21
+
+[5:07:50 p.m.] 😴 10s pause
+
+[5:08:00 p.m.] 
+📌 santander.wd3.myworkdayjobs.com
+[5:08:00 p.m.] 🔍 https://santander.wd3.myworkdayjobs.com/en-US/SantanderCareers?keywords=business+analyst
+[5:08:00 p.m.]    📍 Site type: workday
+[5:08:09 p.m.]    ⏳ Loading more results...
+[5:08:13 p.m.]    ✅ Extracted 20 job links
+[5:08:13 p.m.]    📋 Sample jobs:
+[5:08:13 p.m.]      • Initiativbewerbung
+[5:08:13 p.m.]      • Esp. Medios
+[5:08:13 p.m.]      • GERENTE DE SERVICIOS
+[5:08:13 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:08:13 p.m.] 😴 10s pause
+
+[5:08:23 p.m.] 
+📌 td.wd3.myworkdayjobs.com
+[5:08:23 p.m.] 🔍 https://td.wd3.myworkdayjobs.com/en-US/TDBankCareers?keywords=business+analyst
+[5:08:23 p.m.]    📍 Site type: workday
+[5:08:29 p.m.]    ⏳ Loading more results...
+[5:08:33 p.m.]    ✅ Extracted 0 job links
+[5:08:33 p.m.]    📊 Added: 0 | Skipped: 0
+
+[5:08:33 p.m.] 😴 10s pause
+
+[5:08:43 p.m.] 
+📌 wd1.myworkdaysite.com
+[5:08:43 p.m.] 🔍 https://wd1.myworkdaysite.com/en-US/recruiting/wf/WellsFargoJobs?keywords=business+analyst
+[5:08:43 p.m.]    📍 Site type: workday
+[5:08:52 p.m.]    ⏳ Loading more results...
+[5:08:56 p.m.]    ✅ Extracted 20 job links
+[5:08:56 p.m.]    📋 Sample jobs:
+[5:08:56 p.m.]      • Personal Banker Smokey Point
+[5:08:56 p.m.]      • Institutional Investment Operations Senior Manager
+[5:08:56 p.m.]      • Premier Partnership Leader
+[5:08:56 p.m.]    📊 Added: 0 | Skipped: 20
+
+[5:08:56 p.m.] 😴 10s pause
+
+[5:09:06 p.m.] 
+📌 westernalliancebank.wd5.myworkdayjobs.com
+[5:09:06 p.m.] 🔍 https://westernalliancebank.wd5.myworkdayjobs.com/WAB?keywords=business+analyst
+[5:09:06 p.m.]    📍 Site type: workday
+[5:09:14 p.m.]    ⏳ Loading more results...
+[5:09:18 p.m.]    ✅ Extracted 20 job links
+[5:09:18 p.m.]    📋 Sample jobs:
+[5:09:18 p.m.]      • Wire Transfer Team Lead
+[5:09:18 p.m.]      • Assistant Vice President, Portfolio Manager
+[5:09:18 p.m.]      • Social Media Marketing Manager
+[5:09:18 p.m.]    ✅ 2026 Commercial Banking Development Program - Credit Analyst - Atlanta, GA - Technology & Innovation Banking
+[5:09:19 p.m.]    ✅ Compliance Assistant Manager
+[5:09:20 p.m.]    ✅ Counsel/Senior Counsel
+[5:09:21 p.m.]    ✅ SVP, Commercial Banker
+[5:09:22 p.m.]    ✅ Senior Commercial Loan Operations Administrator II
+[5:09:31 p.m.]    ... and 8 more
+[5:09:31 p.m.]    📊 Added: 13 | Skipped: 7
+
+[5:09:31 p.m.] 😴 10s pause
+
+[5:09:41 p.m.] 
+📌 wintrust.wd1.myworkdayjobs.com
+[5:09:41 p.m.] 🔍 https://wintrust.wd1.myworkdayjobs.com/Search?keywords=business+analyst
+[5:09:41 p.m.]    📍 Site type: workday
+[5:09:49 p.m.]    ⏳ Loading more results...
+[5:09:53 p.m.]    ✅ Extracted 20 job links
+[5:09:53 p.m.]    📋 Sample jobs:
+[5:09:53 p.m.]      • Principal Salesforce Engineer
+[5:09:53 p.m.]      • Relationship Banker - Lombard, IL
+[5:09:53 p.m.]      • VP Compliance - Retail Banking & Payments
+[5:09:53 p.m.]    ✅ Principal Salesforce Engineer
+[5:09:54 p.m.]    ✅ Relationship Banker - Lombard, IL
+[5:09:55 p.m.]    ✅ VP Compliance - Retail Banking & Payments
+[5:09:56 p.m.]    ✅ Mortgage Warehouse Lending Specialist
+[5:09:57 p.m.]    ✅ Relationship Banker - Elgin, IL
+[5:10:13 p.m.]    ... and 15 more
+[5:10:13 p.m.]    📊 Added: 20 | Skipped: 0
+
+[5:10:13 p.m.] 😴 10s pause
+
+[5:10:23 p.m.] 
+📌 canadiantirecorporation.wd3.myworkdayjobs.com
+[5:10:23 p.m.] 🔍 https://canadiantirecorporation.wd3.myworkdayjobs.com/EnterpriseExternalCareersSite?keywords=business+analyst
+[5:10:23 p.m.]    📍 Site type: workday
+[5:10:29 p.m.]    ⏳ Loading more results...
+[5:10:33 p.m.]    ✅ Extracted 0 job links
+[5:10:33 p.m.]    📊 Added: 0 | Skipped: 0
+
+[5:10:33 p.m.] 😴 10s pause
+
+[5:10:43 p.m.] 
+📌 fairstone.wd3.myworkdayjobs.com
+[5:10:43 p.m.] 🔍 https://fairstone.wd3.myworkdayjobs.com/FairstoneCareers?keywords=business+analyst
+[5:10:43 p.m.]    📍 Site type: workday
+[5:10:52 p.m.]    ⏳ Loading more results...
+[5:10:56 p.m.]    ✅ Extracted 20 job links
+[5:10:56 p.m.]    📋 Sample jobs:
+[5:10:56 p.m.]      • Senior Representative, Digital Online Solutions
+[5:10:56 p.m.]      • Senior Representative,  Credit and Customer Engage
+[5:10:56 p.m.]      • Income Verifier
+[5:10:56 p.m.]    ✅ Senior Representative, Digital Online Solutions
+[5:10:57 p.m.]    ✅ Senior Representative,  Credit and Customer Engagement
+[5:10:58 p.m.]    ✅ Income Verifier
+[5:10:59 p.m.]    ✅ LOAN CONSULTANT
+[5:11:00 p.m.]    ✅ Business Risk Manager
+[5:11:16 p.m.]    ... and 15 more
+[5:11:16 p.m.]    📊 Added: 20 | Skipped: 0
+
+[5:11:16 p.m.] 😴 10s pause
+
+[5:11:26 p.m.] 
+📌 homeequitybank.wd10.myworkdayjobs.com
+[5:11:26 p.m.] 🔍 https://homeequitybank.wd10.myworkdayjobs.com/HEBCareers?keywords=business+analyst
+[5:11:26 p.m.]    📍 Site type: workday
+[5:11:32 p.m.]    ⏳ Loading more results...
+[5:11:36 p.m.]    ✅ Extracted 0 job links
+[5:11:36 p.m.]    📊 Added: 0 | Skipped: 0
+
+[5:11:36 p.m.] 😴 10s pause
+
+[5:11:46 p.m.] 
+📌 myview.wd3.myworkdayjobs.com
+[5:11:46 p.m.] 🔍 https://myview.wd3.myworkdayjobs.com/pcfinancialjobs?keywords=business+analyst
+[5:11:46 p.m.]    📍 Site type: workday
+[5:11:52 p.m.]    ⏳ Loading more results...
+[5:11:57 p.m.]    ✅ Extracted 0 job links
+[5:11:57 p.m.]    📊 Added: 0 | Skipped: 0
+
+[5:11:57 p.m.] 😴 10s pause
+
+[5:12:07 p.m.] 
+📌 sunlife.wd3.myworkdayjobs.com
+[5:12:07 p.m.] 🔍 https://sunlife.wd3.myworkdayjobs.com/Experienced-Jobs?keywords=business+analyst
+[5:12:07 p.m.]    📍 Site type: workday
+[5:12:15 p.m.]    ⏳ Loading more results...
+[5:12:19 p.m.]    ✅ Extracted 20 job links
+[5:12:19 p.m.]    📋 Sample jobs:
+[5:12:19 p.m.]      • Principal Consultant - ServiceNow
+[5:12:19 p.m.]      • Director, Internal Audit, Corporate Functions & Ri
+[5:12:19 p.m.]      • AVP, Corporate Strategy & Enablement
+[5:12:19 p.m.]    ✅ Principal Consultant - ServiceNow
+[5:12:20 p.m.]    ✅ Director, Internal Audit, Corporate Functions & Risk Management
+[5:12:21 p.m.]    ✅ AVP, Corporate Strategy & Enablement
+[5:12:22 p.m.]    ✅ Case Specialist I, STD
+[5:12:23 p.m.]    ✅ Commission & Payroll Associate
+[5:12:27 p.m.] 🛑 Received SIGTERM - shutting down gracefully...
