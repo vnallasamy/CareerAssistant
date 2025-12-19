@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "playwright": "^1.57.0"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}
