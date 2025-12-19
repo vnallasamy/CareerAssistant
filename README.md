@@ -1,4 +1,5 @@
-# 🎯 CareerAssistant
+<img width="168" height="58" alt="CareerAssistant" src="https://github.com/user-attachments/assets/6dac1d1b-5ec2-4951-930d-7c4578e599e4" />
+
 
 **Your AI-Powered Personal Job Search Engine for Banking Careers**
 
