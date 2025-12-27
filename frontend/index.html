@@ -23,21 +23,36 @@
         <div class="header-left">
             <img src="images/CareerAssistant.png" alt="Career Assistant" class="main-logo">
         </div>
-        <div class="header-right" style="display:flex;align-items:center;gap:12px;flex-wrap:nowrap;justify-content:flex-start;margin-left:40px;max-width:900px;overflow:hidden;">
-            <input
-                type="text"
-                id="jobSearchInput"
-                class="form-control"
-                placeholder="Type anything: role, skill, location, company..."
-                style="min-width: 400px;"
-            >
+        <div class="header-center" style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;max-width:800px;margin:0 auto;">
+            <div style="display:flex;gap:12px;width:100%;align-items:center;">
+                <input
+                    type="text"
+                    id="jobSearchInput"
+                    class="form-control"
+                    placeholder="Type anything: role, skill, location, company..."
+                    style="flex:1;min-width:400px;padding:12px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;"
+                >
+                <input
+                    type="text"
+                    id="countryChipInput"
+                    placeholder="Type country and press Enter..."
+                    style="flex:1;min-width:300px;padding:12px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;"
+                />
+                <button class="btn-header btn-icon" id="clearFiltersBtn" title="Clear Filters" style="padding:10px 12px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6"></path>
+                    </svg>
+                </button>
+            </div>
+            <div style="display:flex;gap:8px;width:100%;">
+                <div id="searchChips" style="display:flex;flex-wrap:wrap;gap:6px;flex:1;"></div>
+                <div id="countryChips" style="display:flex;flex-wrap:wrap;gap:6px;flex:1;"></div>
+            </div>
+        </div>
+        <div class="header-right" style="display:flex;align-items:center;gap:12px;margin-left:20px;">
             <button class="btn-header btn-orange" id="searchRolesBtn">Configure Search</button>
             <button class="btn-header btn-blue" id="monitorBtn">Live Monitor</button>
-<div id="countryChipsContainer" style="margin-top: 12px;">
-  <input type="text" id="countryChipInput" placeholder="Type country and press Enter (e.g., United States, Canada)..." style="width: 260px; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px;" />
-  <div id="countryChips" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;"></div>
-</div>
-            <button class="btn-header btn-gray" id="manageResumesBtn" style="display:none;">Manage Profile</button>
+            <button class="btn-header btn-gray" id="manageProfileBtn">Manage Profile</button>
             <button class="btn-header btn-red" id="clearAllBtn">Clear All Jobs</button>
             <img src="images/alfalabs.png" alt="Alfalabs" style="height:42px;margin-left:12px;">
         </div>
@@ -96,21 +111,6 @@
             <div class="modal-footer">
                 <button id="saveRolesBtn" class="btn btn-primary">Save Roles</button>
                 <button id="cancelRolesBtn" class="btn btn-secondary">Cancel</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="resumeManagerModal" class="modal">
-        <div class="modal-content resume-manager-content">
-            <div class="resume-manager-header">
-                <h2>Resume Manager</h2>
-                <span class="close close-resume">&times;</span>
-            </div>
-            <div class="resume-manager-body">
-                <p style="padding: 20px;">Resume manager content goes here.</p>
-            </div>
-            <div class="resume-manager-footer">
-                <button class="btn btn-secondary">Close</button>
             </div>
         </div>
     </div>
