@@ -5,7 +5,7 @@
 
 CareerAssistant is a powerful, privacy-focused job search tool that runs entirely on your local machine. It uses **intelligent AI automation** to continuously monitor **100+ banking job sites** across American and Canadian banks, enriching and aggregating opportunities in one convenient location without relying on third-party job boards.
 
-![CareerAssistant Banner](frontend/images/CareerAssistant. png)
+![CareerAssistant Banner](frontend/images/CareerAssistant.png)
 
 ---
 
@@ -251,7 +251,7 @@ CareerAssistant is a powerful, privacy-focused job search tool that runs entirel
 3. **Get LocationIQ API Key**
    - Sign up for a free account at [https://locationiq.com/](https://locationiq.com/)
    - Copy your API key from the dashboard
-   - Open `backend\scrapers\discovery_scraper. js` in a text editor
+   - Open `backend\scrapers\discovery_scraper.js` in a text editor
    - Replace the placeholder API key:
      ```javascript
      const LOCATIONIQ_KEY = 'YOUR_API_KEY_HERE';
@@ -419,14 +419,14 @@ All jobs are saved to the same database.
 CareerAssistant/
 ├── backend/
 │   ├── server.js                      # Main web server
-│   ├── db. js                          # Database operations
-│   ├── jobs. db                        # SQLite database (auto-created)
+│   ├── db.js                          # Database operations
+│   ├── jobs.db                        # SQLite database (auto-created)
 │   ├── package.json                   # Node.js dependencies
 │   ├── config/
 │   │   └── job_sites.txt              # 100+ bank job sites (curated list)
 │   ├── scrapers/
 │   │   ├── discovery_scraper.js       # Main job discovery & AI enrichment
-│   │   └── scraper. log                # Scraper activity log
+│   │   └── scraper.log                # Scraper activity log
 │   └── webarchives/                   # Archived job posting HTML files
 ├── frontend/
 │   ├── index.html                     # Main UI
