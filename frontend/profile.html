@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Profile - Career Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="images/CareerAssistant.png" alt="Career Assistant" class="main-logo">
+        </div>
+        <div class="header-center" style="flex:1;">
+            <h1 style="margin:0;font-size:24px;color:#1d1d1f;">Manage Profile</h1>
+        </div>
+        <div class="header-right" style="display:flex;align-items:center;gap:12px;">
+            <button class="btn-header btn-gray" id="backToJobsBtn">Back to Jobs</button>
+            <img src="images/alfalabs.png" alt="Alfalabs" style="height:42px;margin-left:12px;">
+        </div>
+    </header>
+
+    <div class="profile-container">
+        <!-- Sidebar Navigation -->
+        <div class="profile-sidebar">
+            <nav class="profile-nav">
+                <button class="profile-nav-btn active" data-tab="profile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Profile</span>
+                </button>
+                <button class="profile-nav-btn" data-tab="resumes">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <span>Resumes</span>
+                </button>
+                <button class="profile-nav-btn" data-tab="application">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path>
+                        <polyline points="9 5 9 3 15 3 15 5"></polyline>
+                        <line x1="9" y1="12" x2="15" y2="12"></line>
+                        <line x1="9" y1="16" x2="15" y2="16"></line>
+                    </svg>
+                    <span>Application Questions</span>
+                </button>
+                <button class="profile-nav-btn" data-tab="skills">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <span>Skills</span>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="profile-content">
+            <!-- Profile Tab -->
+            <div class="profile-tab active" id="profile-tab">
+                <h2>Personal Information</h2>
+                <div id="profileContent">
+                    <p>Loading...</p>
+                </div>
+            </div>
+
+            <!-- Resumes Tab -->
+            <div class="profile-tab" id="resumes-tab">
+                <h2>Resume Management</h2>
+                <div id="resumesContent">
+                    <p>Loading...</p>
+                </div>
+            </div>
+
+            <!-- Application Questions Tab -->
+            <div class="profile-tab" id="application-tab">
+                <h2>Application Questions</h2>
+                <div id="applicationContent">
+                    <p>Loading...</p>
+                </div>
+            </div>
+
+            <!-- Skills Tab -->
+            <div class="profile-tab" id="skills-tab">
+                <h2>Skills Management</h2>
+                <div id="skillsContent">
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

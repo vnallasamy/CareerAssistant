@@ -7,6 +7,7 @@ let filteredJobs = [];
 let searchQuery = '';
 let selectedCountry = '';
 let selectedCountries = [];
+let searchChips = [];
 
 
 // ==================== DOM ELEMENTS ====================
@@ -18,9 +19,7 @@ const applyFiltersBtn = document.getElementById('applyFiltersBtn');
 const countryFilter = document.getElementById('countryFilter');
 const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 const clearAllBtn = document.getElementById('clearAllBtn');
-const manageResumesBtn = document.getElementById('manageResumesBtn');
-const resumeManagerModal = document.getElementById('resumeManagerModal');
-const closeResume = document.querySelector('.close-resume');
+const manageProfileBtn = document.getElementById('manageProfileBtn');
 
 const monitorBtn = document.getElementById('monitorBtn');
 const monitorModal = document.getElementById('monitorModal');
@@ -33,6 +32,9 @@ const cancelRolesBtn = document.getElementById('cancelRolesBtn');
 const rolesInput = document.getElementById('rolesInput');
 
 const searchInput = document.getElementById('jobSearchInput');
+const countryChipInput = document.getElementById('countryChipInput');
+const searchChipsContainer = document.getElementById('searchChips');
+const countryChipsContainer = document.getElementById('countryChips');
 
 let monitorInterval = null;
 
@@ -267,7 +269,7 @@ function applyFilters() {
         }
     }
 
-    // Search filter
+    // Search filter (existing search input)
     if (typeof searchQuery === 'string' && searchQuery.trim().length > 0) {
         const q = searchQuery.trim().toLowerCase();
         jobs = jobs.filter(job => {
@@ -278,6 +280,22 @@ function applyFilters() {
                 job.summary || ''
             ].join(' ').toLowerCase();
             return haystack.includes(q);
+        });
+    }
+
+    // Search chips filter (multiple search terms)
+    if (searchChips.length > 0) {
+        jobs = jobs.filter(job => {
+            const haystack = [
+                job.title || '',
+                job.company || '',
+                job.location || '',
+                job.summary || ''
+            ].join(' ').toLowerCase();
+            // All search chips must match
+            return searchChips.every(chip => 
+                haystack.includes(chip.toLowerCase())
+            );
         });
     }
 
@@ -415,9 +433,12 @@ if (clearFiltersBtn) {
         searchQuery = '';
         if (countryFilter) countryFilter.value = '';
         selectedCountry = '';
-        applyFilters();
+        searchChips = [];
         selectedCountries = [];
-        renderChips();
+        renderSearchChips();
+        renderCountryChips();
+        applyFilters();
+        showStatus('Filters cleared', 'success');
     });
 }
 
@@ -450,24 +471,58 @@ if (clearAllBtn) {
 
 // ==================== INITIALIZATION ====================
 
-const countryChipInput = document.getElementById('countryChipInput');
-const countryChips = document.getElementById('countryChips');
-
-function renderChips() {
-    if (!countryChips) return;
-    countryChips.innerHTML = selectedCountries.map((c, i) => `
-        <div class="country-chip">
-            ${c}
-            <button onclick="removeChip(${i})">×</button>
+// ==================== SEARCH CHIPS FUNCTIONALITY ====================
+function renderSearchChips() {
+    if (!searchChipsContainer) return;
+    searchChipsContainer.innerHTML = searchChips.map((chip, i) => `
+        <div class="chip">
+            ${chip}
+            <button onclick="removeSearchChip(${i})">×</button>
         </div>
     `).join('');
 }
 
-function removeChip(index) {
-    selectedCountries.splice(index, 1);
-    renderChips();
+function removeSearchChip(index) {
+    searchChips.splice(index, 1);
+    renderSearchChips();
     applyFilters();
 }
+
+window.removeSearchChip = removeSearchChip; // Make available globally for onclick
+
+if (searchInput) {
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const val = searchInput.value.trim();
+            if (val && !searchChips.includes(val)) {
+                searchChips.push(val);
+                renderSearchChips();
+                applyFilters();
+            }
+            searchInput.value = '';
+        }
+    });
+}
+
+// ==================== COUNTRY CHIPS FUNCTIONALITY ====================
+function renderCountryChips() {
+    if (!countryChipsContainer) return;
+    countryChipsContainer.innerHTML = selectedCountries.map((c, i) => `
+        <div class="chip">
+            ${c}
+            <button onclick="removeCountryChip(${i})">×</button>
+        </div>
+    `).join('');
+}
+
+function removeCountryChip(index) {
+    selectedCountries.splice(index, 1);
+    renderCountryChips();
+    applyFilters();
+}
+
+window.removeCountryChip = removeCountryChip; // Make available globally for onclick
 
 if (countryChipInput) {
     countryChipInput.addEventListener('keydown', (e) => {
@@ -476,11 +531,18 @@ if (countryChipInput) {
             const val = countryChipInput.value.trim();
             if (val && !selectedCountries.includes(val)) {
                 selectedCountries.push(val);
-                renderChips();
+                renderCountryChips();
                 applyFilters();
             }
             countryChipInput.value = '';
         }
+    });
+}
+
+// Manage Profile button
+if (manageProfileBtn) {
+    manageProfileBtn.addEventListener('click', () => {
+        window.location.href = 'profile.html';
     });
 }
 

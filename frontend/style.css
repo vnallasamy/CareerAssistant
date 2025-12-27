@@ -57,6 +57,15 @@ header {
     transition: all 0.2s;
 }
 
+.btn-icon {
+    background: #E5E5E7;
+    color: #1d1d1f;
+}
+
+.btn-icon:hover {
+    background: #d0d0d2;
+}
+
 .btn-orange {
     background: #E67548;
     color: white;
@@ -64,6 +73,15 @@ header {
 
 .btn-orange:hover {
     background: #d56537;
+}
+
+.btn-blue {
+    background: #007AFF;
+    color: white;
+}
+
+.btn-blue:hover {
+    background: #0066D6;
 }
 
 .btn-gray {
@@ -75,10 +93,45 @@ header {
     background: #d0d0d2;
 }
 
+.btn-red {
+    background: #FF3B30;
+    color: white;
+}
+
+.btn-red:hover {
+    background: #E5342A;
+}
+
 .header-logo {
     height: 51px;
     width: auto;
     margin-left: 8px;
+}
+
+/* Search and country chips styling */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    background: #3b82f6;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 13px;
+    gap: 6px;
+}
+
+.chip button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0;
+}
+
+.chip button:hover {
+    opacity: 0.8;
 }
 
 /* ============================================
