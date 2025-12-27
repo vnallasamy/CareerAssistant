@@ -1,0 +1,465 @@
+/* Profile Page Specific Styles */
+
+body {
+    margin: 0;
+    padding-top: 80px;
+    background: #f5f5f7;
+}
+
+.profile-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 20px;
+    min-height: calc(100vh - 120px);
+}
+
+/* Sidebar Navigation */
+.profile-sidebar {
+    width: 250px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.profile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1d1d1f;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.profile-nav-btn:hover {
+    background: #f5f5f7;
+}
+
+.profile-nav-btn.active {
+    background: #E67548;
+    color: white;
+}
+
+.profile-nav-btn svg {
+    flex-shrink: 0;
+}
+
+/* Main Content Area */
+.profile-content {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.profile-tab {
+    display: none;
+}
+
+.profile-tab.active {
+    display: block;
+}
+
+.profile-tab h2 {
+    margin: 0 0 24px 0;
+    font-size: 28px;
+    color: #1d1d1f;
+    font-weight: 600;
+}
+
+/* Form Styles */
+.form-section {
+    margin-bottom: 32px;
+}
+
+.form-section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E67548;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.form-grid.single {
+    grid-template-columns: 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #E67548;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Repeatable Section Styles */
+.repeatable-section {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #f9fafb;
+}
+
+.repeatable-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.repeatable-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.btn-remove {
+    padding: 6px 12px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-remove:hover {
+    background: #dc2626;
+}
+
+.btn-add {
+    padding: 10px 20px;
+    background: #E67548;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 12px;
+}
+
+.btn-add:hover {
+    background: #d56537;
+}
+
+/* Action Buttons */
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.btn-primary {
+    padding: 12px 32px;
+    background: #E67548;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #d56537;
+}
+
+.btn-secondary {
+    padding: 12px 32px;
+    background: #f3f4f6;
+    color: #1d1d1f;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #e5e7eb;
+}
+
+/* Resume Tab Styles */
+.resume-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.resume-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #f3f4f6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.resume-tab:hover {
+    background: #e5e7eb;
+}
+
+.resume-tab.active {
+    background: #E67548;
+    color: white;
+}
+
+.resume-tab .default-badge {
+    background: #10b981;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.resume-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.resume-textarea {
+    min-height: 400px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+.resume-note {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #92400e;
+    margin-bottom: 16px;
+}
+
+/* Skills Tab Styles */
+.skills-category {
+    margin-bottom: 24px;
+}
+
+.skills-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.skills-category-header:hover {
+    background: #e5e7eb;
+}
+
+.skills-category-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 16px;
+}
+
+.skill-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.skill-chip:hover {
+    border-color: #E67548;
+    background: #fef5f1;
+}
+
+.skill-chip-name {
+    font-weight: 500;
+    color: #1d1d1f;
+}
+
+.skill-chip-level {
+    padding: 2px 8px;
+    background: #E67548;
+    color: white;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.skill-chip-remove {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0;
+}
+
+.skill-chip-remove:hover {
+    color: #ef4444;
+}
+
+.skill-input-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 0 16px;
+}
+
+.skill-input-container input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.skill-input-container select {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.skill-input-container button {
+    padding: 8px 16px;
+    background: #E67548;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.skill-input-container button:hover {
+    background: #d56537;
+}
+
+/* Status Message */
+.status-message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status-message.success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+
+.status-message.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .profile-container {
+        flex-direction: column;
+    }
+    
+    .profile-sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+    
+    .profile-nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    
+    .profile-nav-btn span {
+        white-space: nowrap;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
