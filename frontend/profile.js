@@ -631,8 +631,76 @@ async function saveProfile(e) {
             }
         }
         
-        // Similar saves for education, certifications, languages...
-        // (abbreviated for brevity, but would follow same pattern)
+        // Save education
+        for (const edu of education) {
+            const eduData = {
+                degree: formData.get(`edu_degree_${edu.id}`),
+                institution: formData.get(`edu_institution_${edu.id}`),
+                location: formData.get(`edu_location_${edu.id}`),
+                start_year: formData.get(`edu_start_year_${edu.id}`) || null,
+                end_year: formData.get(`edu_end_year_${edu.id}`) || null,
+                gpa: formData.get(`edu_gpa_${edu.id}`)
+            };
+            
+            if (edu.id < Date.now() - 100000) {
+                await fetch(`${API_BASE}/education/${edu.id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(eduData)
+                });
+            } else {
+                await fetch(`${API_BASE}/education`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(eduData)
+                });
+            }
+        }
+        
+        // Save certifications
+        for (const cert of certifications) {
+            const certData = {
+                certification_name: formData.get(`cert_name_${cert.id}`),
+                year_obtained: formData.get(`cert_year_${cert.id}`) || null,
+                is_active: formData.get(`cert_active_${cert.id}`) ? true : false
+            };
+            
+            if (cert.id < Date.now() - 100000) {
+                await fetch(`${API_BASE}/certifications/${cert.id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(certData)
+                });
+            } else {
+                await fetch(`${API_BASE}/certifications`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(certData)
+                });
+            }
+        }
+        
+        // Save languages
+        for (const lang of languages) {
+            const langData = {
+                language_name: formData.get(`lang_name_${lang.id}`),
+                proficiency_level: formData.get(`lang_proficiency_${lang.id}`)
+            };
+            
+            if (lang.id < Date.now() - 100000) {
+                await fetch(`${API_BASE}/languages/${lang.id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(langData)
+                });
+            } else {
+                await fetch(`${API_BASE}/languages`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(langData)
+                });
+            }
+        }
         
         showMessage('Profile saved successfully!', 'success');
         await loadProfileTab();
